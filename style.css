@@ -10,29 +10,19 @@ body {
 }
 
 :root {
-  --green: hsl(161, 30%, 30%);
+  --green: hsl(161, 29%, 30%);
   --red: hsl(340, 30%, 50%);
   --blue: hsl(201, 30%, 50%);
   --orange: hsl(29, 30%, 50%);
   --transition: 0.5s all ease;
-  --text: hsl(0, 0%, 50%);
-  --hair: #131404;
-  --shirt: #f1f2ed;
+  --hair: hsl(64, 57%, 10%);
+  --shirt: hsl(72, 16%, 90%);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/* 
-a > svg {
-  padding: 3px;
-} */
 .scroll-snap-parent {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
@@ -49,11 +39,15 @@ a > svg {
   scroll-snap-align: start;
 }
 
-.hero-img {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  filter: opacity(0.7);
+.bndsrvnt {
+  font-family: "Playfair Display";
+  font-weight: 400;
+}
+
+#listen {
+  background-image: url(assets/WTWWD.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero-header {
@@ -71,10 +65,28 @@ a > svg {
   align-items: center;
 }
 
-.scroll-down {
-  margin-top: 5rem;
-  width: 80px;
-  height: auto;
+.play-btn {
+  border: 1px solid white;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  position: relative;
+  /* display: grid;
+  place-items: center; */
+  transition: var(--transition);
+}
+
+.play-btn:hover {
+  border: 1px solid var(--red);
+  animation: rotation 2s infinite linear;
+  background-color: var(--red);
+}
+
+.play-btn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 button {
@@ -87,24 +99,25 @@ button {
   transition: var(--transition);
 }
 
-.green.bg {
-  background-color: var(--green);
-}
-.red.bg {
-  background-color: var(--red);
-}
-.blue.bg {
-  background-color: var(--blue);
-}
-.orange.bg {
-  background-color: var(--orange);
+.socials {
+  padding: 1.5rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-.socials {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.socials a {
+  display: block;
+  margin: 0.5rem auto;
+  color: var(--hair);
+  text-decoration: none;
+  width: 35px;
+}
+
+.social-icon {
+  width: 35px;
 }
 
 @media (min-width: 600px) {
@@ -113,20 +126,6 @@ button {
   }
 }
 
-.hero-container.red button {
-  color: var(--red);
-  border: 1px solid var(--red);
-}
-.hero-container.red button:hover {
-  background-color: var(--red);
-}
-.hero-container.green button {
-  color: var(--green);
-  border: 1px solid var(--green);
-}
-.hero-container.green button:hover {
-  background-color: var(--green);
-}
 .hero-container.orange button {
   color: var(--orange);
   border: 1px solid var(--orange);
@@ -141,6 +140,12 @@ button {
 
 #about {
   background-color: var(--shirt);
+}
+.about-text {
+  color: var(--hair);
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
 }
 .flex-col {
   display: flex;
@@ -160,6 +165,7 @@ button {
   height: 200px;
   margin: 1.5rem auto;
   border-radius: 50%;
+  object-fit: cover;
 }
 #about h1 {
   font-size: 2.5rem;
