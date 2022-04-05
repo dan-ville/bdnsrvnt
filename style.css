@@ -71,8 +71,6 @@ html {
   width: 70px;
   border-radius: 50%;
   position: relative;
-  /* display: grid;
-  place-items: center; */
   transition: var(--transition);
 }
 
@@ -176,4 +174,15 @@ button {
 #about p {
   margin-top: 2rem;
   color: var(--hair);
+}
+
+.quote {
+  border: 1px solid var(--hair);
+  border-radius: 1em;
+  padding: 1em;
+  margin-top: 1rem;
+  filter: opacity(0.85);
+  font-size: 0.9rem;
+  text-align: justify;
+  box-shadow: -2px 2px 2px var(--orange);
 }
